@@ -11,4 +11,5 @@ class TestfrenchToEnglish(unittest.TestCase):
     def test_englishToFrench(self):
         self.assertEqual(frenchToEnglish('Bonjour'), 'Hello')
 
-unittest.main()
+if __name__ == '__main__':
+    unittest.main()
