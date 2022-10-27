@@ -1,15 +1,16 @@
 import unittest
-from ibm_watson import LanguageTranslatorV3
-from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
-from dotenv import load_dotenv
-from translator import englishToFrench
-from translator import frenchToEnglish
+from translator import englishToFrench,frenchToEnglish
 
-class TestfrenchToEnglish(unittest.TestCase):
-    def test_frenchToEnglish(self):
-        self.assertEqual(englishToFrench('Hello'), 'Bonjour')
+class TestTranslator(unittest.TestCase):
     def test_englishToFrench(self):
+        self.assertNotEqual(englishToFrench('None'), '')
+        self.assertEqual(englishToFrench('Hello'), 'Bonjour')
+
+
+
+    def test_frenchToEnglish(self):
+        self.assertNotEqual(frenchToEnglish('None'), '')
         self.assertEqual(frenchToEnglish('Bonjour'), 'Hello')
 
-if __name__ == '__main__':
-    unittest.main()
+
+unittest.main()
